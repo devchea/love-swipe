@@ -1,5 +1,4 @@
 import React from 'react'
-import "./Header.css"
 import PersonIcon from '@material-ui/icons/Person';
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import Logo from './love_swipe_logo.png';
