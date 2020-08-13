@@ -1,41 +1,33 @@
 import React from 'react';
 import './App.css';
 import Header from './Header'
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import TinderCards from './TinderCards';
 import SwipeButtons from './SwipeButtons'
-import { makeStyles, IconButton } from '@material-ui/core';
-
-
-const useStyles = makeStyles(theme => ({
-  root:{
-    margin: '0px',
-    footer: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        borderBottom: '1px solid #f9f9f9',
-        padding: '15px',
-        alignItems: 'center'
-    }
-  },
-}));
-
+import ChatContainer from './ChatContainer'
+import ChatScreen from './ChatScreen'
 
 const App = () => {
-  const classes = useStyles();
   return (
-    <div className="App">
-      <Header/>
+    <div className='App'>
       <Router>
-        <Switch>
-          <Route path="/chat">
-            <h1>Chat page</h1>
+      <Switch>
+          <Route path='/chat/:person'>
+            <Header backButton='/chat'/>
+            <ChatScreen />
           </Route>
-          <Route path="/">
+          <Route path='/profile'>
+          <Header backButton='/'/>
+            <h1>Profile page</h1>
+          </Route>
+          <Route path='/chat'>
+            <Header backButton='/'/>
+            <ChatContainer/>
+          </Route>
+          <Route path='/'>
+            <Header/>
             <TinderCards/>
-            <div className={classes.root.footer}>
             <SwipeButtons/>
-            </div>
           </Route>
         </Switch>
       </Router>

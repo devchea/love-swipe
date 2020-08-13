@@ -8,14 +8,15 @@ import { makeStyles } from '@material-ui/core';
 const useStyles = makeStyles(theme => ({
     card: {
         position: 'relative',
-        width: '600px',
+        width: '65vw',
+        maxWidth: '70vw',
+        height: '55vh',
+        maxHeight: '70vw',
         padding: '20px',
-        maxWidth: '85vw',
-        height: '60vh',
         borderRadius: '20px',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        boxShadow: '0px 18px 38px 0px rgba(0, 0, 0, 0.3)'
+        boxShadow: '3px 10px 9px -4px #8a8a8a'
     },
     card__h3: {
         position: 'absolute',
